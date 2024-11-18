@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Client Overview{% endblock %}
+
+{% block content %}
+<div class="client-overview-container">
+    
+    <!-- Company Status Section -->
+    <section class="company-status">
+        <h2>Company Status</h2>
+        <div class="status-cards">
+            <div class="status-card">
+                <h3>Campaigns Running</h3>
+                <p><strong>3 Active</strong></p>
+            </div>
+            <div class="status-card">
+                <h3>Overall Engagement</h3>
+                <p><strong>78%</strong></p>
+            </div>
+            <div class="status-card">
+                <h3>Client Feedback</h3>
+                <p><strong>Positive</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics Section -->
+    <section class="key-metrics">
+        <h2>Key Metrics</h2>
+        <div class="metric-cards">
+            <div class="metric-card">
+                <h3>Total Impressions</h3>
+                <p><strong>250,000</strong></p>
+            </div>
+            <div class="metric-card">
+                <h3>Total Clicks</h3>
+                <p><strong>18,500</strong></p>
+            </div>
+            <div class="metric-card">
+                <h3>Conversion Rate</h3>
+                <p><strong>3.4%</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Assets Section -->
+    <section class="company-assets">
+        <h2>Company Assets</h2>
+        <div class="asset-cards">
+            <div class="asset-card">
+                <img src="https://via.placeholder.com/60" alt="Company Logo">
+                <p>Main Logo</p>
+            </div>
+            <div class="asset-card">
+                <audio controls>
+                    <source src="https://example.com/jingle.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Promotional Jingle</p>
+            </div>
+        </div>
+    </section>
+    
+</div>
+{% endblock %}

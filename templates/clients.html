@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Clients - Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Clients</h1>
+    <div class="client-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Client 1</td>
+                    <td>contact1@example.com</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>Client 2</td>
+                    <td>contact2@example.com</td>
+                    <td>Inactive</td>
+                </tr>
+                <tr>
+                    <td>Client 3</td>
+                    <td>contact3@example.com</td>
+                    <td>Active</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

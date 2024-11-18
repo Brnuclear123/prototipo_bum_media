@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Campaign Management - Dashboard{% endblock %}
+
+{% block content %}
+<div class="campaign-container">
+    <!-- Cabeçalho da Campanha -->
+    <div class="campaign-header">
+        <h1 class="header-title">Campaign Management</h1>
+        <div class="header-actions">
+            <button class="btn new-campaign-button">➕ New Campaign</button>
+        </div>
+    </div>
+
+    <!-- Filtro e Pesquisa -->
+    <div class="filter-search-bar">
+        <label for="campaign-search">Search Campaigns</label>
+        <input type="text" id="campaign-search" placeholder="Type campaign name...">
+        <select id="campaign-status">
+            <option value="" disabled selected>Filter by Status</option>
+            <option value="active">Active</option>
+            <option value="paused">Paused</option>
+            <option value="completed">Completed</option>
+        </select>
+    </div>
+
+    <!-- Campanhas Ativas -->
+    <div class="campaign-block">
+        <h2>Active Campaigns</h2>
+        <div class="campaign-cards">
+            <div class="campaign-card">
+                <h3 class="campaign-title">Campaign Name 1</h3>
+                <p class="campaign-details">Duration: 30 seconds • Audience: Adults</p>
+                <div class="campaign-actions">
+                    <button class="btn edit-campaign">✏️ Edit</button>
+                    <button class="btn pause-campaign">⏸️ Pause</button>
+                    <button class="btn duplicate-campaign">🔁 Duplicate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campanhas Pausadas -->
+    <div class="campaign-block">
+        <h2>Paused Campaigns</h2>
+        <div class="campaign-cards">
+            <div class="campaign-card">
+                <h3 class="campaign-title">Campaign Name 2</h3>
+                <p class="campaign-details">Duration: 1 minute • Audience: Teens</p>
+                <div class="campaign-actions">
+                    <button class="btn edit-campaign">✏️ Edit</button>
+                    <button class="btn resume-campaign">▶️ Resume</button>
+                    <button class="btn duplicate-campaign">🔁 Duplicate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campanhas Completadas -->
+    <div class="campaign-block">
+        <h2>Completed Campaigns</h2>
+        <div class="campaign-cards">
+            <div class="campaign-card">
+                <h3 class="campaign-title">Campaign Name 3</h3>
+                <p class="campaign-details">Duration: 45 seconds • Audience: Children</p>
+                <div class="campaign-actions">
+                    <button class="btn view-report">📊 View Report</button>
+                    <button class="btn duplicate-campaign">🔁 Duplicate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

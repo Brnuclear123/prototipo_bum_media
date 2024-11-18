@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- CSS Específico do papel -->
+    {% if session['role'] == 'developer' %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='dev_style.css') }}">
+    {% elif session['role'] == 'client' %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='client_style.css') }}">
+    {% endif %}
+
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <div class="sidebar">
+        <h2>RetailMedia AI</h2>
+        <nav>
+            {% if session['role'] == 'developer' %}
+                <a href="{{ url_for('dev_overview') }}">Overview</a>
+                <a href="{{ url_for('dev_clients') }}">Clients</a>
+                <a href="{{ url_for('dev_system') }}">System</a>
+                <a href="{{ url_for('dev_moderation') }}">Moderation</a>
+                <a href="{{ url_for('dev_analytics') }}">Analytics</a>
+                <a href="{{ url_for('dev_content_ai') }}">Content AI</a>
+                <a href="{{ url_for('dev_campaign') }}">Campaign Page</a>
+                <a href="{{ url_for('dev_assets') }}">Asset Library</a>
+                <a href="{{ url_for('dev_company_profile') }}">Company Profile</a>
+            {% elif session['role'] == 'client' %}
+                <a href="{{ url_for('client_overview') }}">Overview</a>
+                <a href="{{ url_for('client_content_ai') }}">Content AI</a>
+                <a href="{{ url_for('client_campaign') }}">Campaign Page</a>
+                <a href="{{ url_for('client_assets') }}">Asset Library</a>
+                <a href="{{ url_for('client_analytics') }}">Analytics</a>
+                <a href="{{ url_for('client_moderation') }}">Moderation</a>
+                <a href="{{ url_for('client_company_profile') }}">Company Profile</a>
+            {% endif %}
+        </nav>        
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </div>
+    </div>
+
+    <!-- Área Principal -->
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- JS Script -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

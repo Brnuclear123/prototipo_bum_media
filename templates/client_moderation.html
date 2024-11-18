@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Content Moderation{% endblock %}
+
+{% block content %}
+<div class="moderation-container">
+    <h1>Content Moderation Area</h1>
+
+    <!-- Visualização do Conteúdo Final -->
+    <div class="final-content">
+        <h2>Campaign Preview</h2>
+        <div class="content-preview">
+            <img src="https://via.placeholder.com/1920x158" alt="Content Preview">
+            <p>Campaign text or a brief description here.</p>
+        </div>
+    </div>
+
+    <!-- Botões de Ação para Moderação -->
+    <div class="moderation-actions">
+        <button class="approve-btn">👍 Approve</button>
+        <button class="reject-btn">👎 Reject</button>
+        <button class="rework-btn">🔄 Rework</button>
+        <button class="publish-btn">🚀 Publish</button>
+    </div>
+
+    <!-- Histórico de Feedback -->
+    <div class="feedback-history">
+        <h2>Feedback History</h2>
+        <ul>
+            <li><strong>03/11/2024:</strong> Request to adjust CTA text.</li>
+            <li><strong>05/11/2024:</strong> Campaign approved for publication.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

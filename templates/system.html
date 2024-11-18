@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}System Settings - Dashboard{% endblock %}
+
+{% block content %}
+    <h1>System Settings</h1>
+    <div class="settings">
+        <h3>Feature Toggles</h3>
+        <label>
+            <input type="checkbox" checked> Enable Notifications
+        </label>
+        <label>
+            <input type="checkbox"> Enable Dark Mode
+        </label>
+        <label>
+            <input type="checkbox" checked> Allow User Registration
+        </label>
+    </div>
+{% endblock %}

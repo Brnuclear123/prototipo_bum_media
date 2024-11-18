@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Centralized Moderation{% endblock %}
+
+{% block content %}
+<div class="moderation-container">
+    <h1 class="moderation-title">Moderation Center</h1>
+    
+    <!-- Filtros de Pesquisa -->
+    <div class="filter-bar">
+        <input type="text" placeholder="Search by client or campaign" id="search-bar">
+        <select id="client-filter">
+            <option value="">All Clients</option>
+            <option value="client1">Client A</option>
+            <option value="client2">Client B</option>
+        </select>
+        <select id="type-filter">
+            <option value="">All Types</option>
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+        </select>
+        <select id="status-filter">
+            <option value="">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+        </select>
+        <button class="apply-filters-button">Apply Filters</button>
+    </div>
+    
+    <!-- Tabela de Conteúdos Pendentes -->
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Client</th>
+                <th>Campaign</th>
+                <th>Type</th>
+                <th>Submission Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="content-list">
+            <tr>
+                <td>Client A</td>
+                <td>Spring Campaign</td>
+                <td>Image</td>
+                <td>2024-11-05</td>
+                <td class="status pending">Pending</td>
+                <td>
+                    <button class="action-button approve">Approve</button>
+                    <button class="action-button reject">Reject</button>
+                    <button class="action-button request-changes">Request Changes</button>
+                </td>
+            </tr>
+            <!-- Additional rows dynamically populated -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}

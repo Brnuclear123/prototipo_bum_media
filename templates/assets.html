@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Biblioteca de Ativos{% endblock %}
+
+{% block content %}
+<div class="assets-container">
+    <h1>Biblioteca de Ativos</h1>
+
+    <!-- Formulário de Upload de Arquivo -->
+    <div class="upload-section">
+        <h2>Adicionar Novo Ativo</h2>
+        <form id="upload-form" enctype="multipart/form-data" method="POST">
+            <label for="file-type">Tipo de Arquivo:</label>
+            <select id="file-type" name="file_type" required>
+                <option value="logo">Logotipo</option>
+                <option value="jingle">Jingle</option>
+            </select>
+
+            <label for="file-upload">Escolher Arquivo:</label>
+            <input type="file" id="file-upload" name="file" required>
+            
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <!-- Visualização e Gerenciamento de Ativos Existentes -->
+    <div class="asset-section">
+        <h2>Logotipos</h2>
+        <div class="asset-grid">
+            <!-- Card de Exemplo para Logotipos -->
+            <div class="asset-card">
+                <img src="{{ url_for('static', filename='assets/logo1.png') }}" alt="Logotipo da Empresa">
+                <p>Logotipo Principal</p>
+                <button class="view-btn">Visualizar</button>
+                <button class="delete-btn">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="asset-section">
+        <h2>Jingles e Áudios</h2>
+        <div class="asset-grid">
+            <!-- Card de Exemplo para Áudio -->
+            <div class="asset-card">
+                <audio controls>
+                    <source src="{{ url_for('static', filename='assets/jingle1.mp3') }}" type="audio/mp3">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+                <p>Jingle Promocional</p>
+                <button class="view-btn">Visualizar</button>
+                <button class="delete-btn">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<script src="{{ url_for('static', filename='js/assets.js') }}"></script>

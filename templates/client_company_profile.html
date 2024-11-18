@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil da Empresa{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <h1>Perfil da Empresa</h1>
+    <form id="company-profile-form">
+
+        <!-- Seção 1: Dados Gerais da Empresa -->
+        <div class="profile-section">
+            <h2>Dados Gerais</h2>
+            <label for="company_name">Nome da Empresa:</label>
+            <input type="text" id="company_name" placeholder="Digite o nome da empresa" required>
+        </div>
+
+        <!-- Seção 2: Localização e Contexto -->
+        <div class="profile-section">
+            <h2>Localização e Contexto</h2>
+            <label for="location_data">Informações de Localização:</label>
+            <textarea id="location_data" placeholder="Ex: Temperatura, horário do dia"></textarea>
+        </div>
+
+        <!-- Seção 3: Tom de Voz da Marca -->
+        <div class="profile-section">
+            <h2>Tom de Voz da Marca</h2>
+            <label for="brand_tone">Descrição do Tom de Voz:</label>
+            <textarea id="brand_tone" placeholder="Ex: Estilo amigável, formal, instrutivo"></textarea>
+        </div>
+
+        <!-- Seção 4: Público-Alvo -->
+        <div class="profile-section">
+            <h2>Público-Alvo</h2>
+            <label for="target_audience">Descrição do Público-Alvo:</label>
+            <textarea id="target_audience" placeholder="Ex: Jovens adultos, entusiastas de tecnologia"></textarea>
+        </div>
+
+        <!-- Seção 5: Call-to-Action -->
+        <div class="profile-section">
+            <h2>Call-to-Action</h2>
+            <label for="call_to_action">Mensagem CTA (Opcional):</label>
+            <input type="text" id="call_to_action" placeholder="Digite um call-to-action para a campanha">
+        </div>
+
+        <!-- Botão de Submissão -->
+        <button type="submit" class="save-button">Salvar Perfil</button>
+    </form>
+</div>
+{% endblock %}
+
+<!-- Script específico para o formulário de perfil da empresa -->
+<script src="{{ url_for('static', filename='js/company_profile.js') }}"></script>
